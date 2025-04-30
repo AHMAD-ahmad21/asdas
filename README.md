@@ -9,7 +9,6 @@
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
   - [Installation](#installation)
   - [Running the Application](#running-the-application)
 - [API Endpoints](#api-endpoints)
@@ -33,14 +32,8 @@
 - **Schema & Docs:** drf-spectacular (OpenAPI + Swagger UI)
 - **Weather Data:** weatherapi.com (live), ipinfo.io for geo-lookup
 - **Database:** SQLite (default)
-- **Testing:** Django test framework
 
 ## Getting Started
-
-### Prerequisites
-
-- Python 3.10+
-- pip
 
 ### Installation
 
