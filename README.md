@@ -116,11 +116,9 @@ _All weather endpoints require an `Authorization: Bearer <access_token>` header.
 
 1. **Login to get tokens**:
 
-```bash
-curl -X POST http://localhost:8000/accounts/login/ \
-  -H "Content-Type: application/json" \
+curl -X POST http://localhost:8000/accounts/login/ \  
+  -H "Content-Type: application/json" \  
   -d '{"username": "user", "password": "pass"}'
-```
 
 2. **Take the `access` token from the response**, then open your browser and go to:  
    [http://localhost:8000/api-docs/swagger-ui/](http://localhost:8000/api-docs/swagger-ui/)
