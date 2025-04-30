@@ -46,11 +46,21 @@ cd sky_pulse
 
 2. **Create & activate a virtual environment**:
 
-```bash
-python3 -m venv venv
-source venv/bin/activate    # macOS/Linux
-venv\Scripts\activate       # Windows
-```
+    ```bash
+    python3 -m venv venv
+    ```
+
+    #### For macOS/Linux:
+
+    ```bash
+    source venv/bin/activate
+    ```
+
+    #### For Windows:
+
+    ```bash
+    venv\Scripts\activate
+    ```
 
 3. **Install dependencies**:
 
