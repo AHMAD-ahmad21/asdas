@@ -14,6 +14,7 @@
   - [Environment Variables](#environment-variables)
   - [Running the Application](#running-the-application)
 - [API Endpoints](#api-endpoints)
+- [Usage Examples](#usage-examples)
 - [Screenshots](#screenshots)
 
 ---
@@ -33,7 +34,8 @@
 - **Schema & Docs:** drf-spectacular (OpenAPI + Swagger UI)
 - **Weather Data:** weatherapi.com (live), ipinfo.io for geo-lookup
 - **Database:** SQLite (default)
-- **Testing:** Django test framework
+- **Testing:** pytest, Django test framework
+- **Containerization:** Docker (optional)
 
 ## Getting Started
 
@@ -46,18 +48,24 @@
 
 1. **Clone the repository**:
 
-git clone https://github.com/yourusername/sky_pulse.git  
+```bash
+git clone https://github.com/yourusername/sky_pulse.git
 cd sky_pulse
+```
 
 2. **Create & activate a virtual environment**:
 
-python3 -m venv venv  
-source venv/bin/activate    # macOS/Linux  
-venv\Scripts\activate     # Windows
+```bash
+python3 -m venv venv
+source venv/bin/activate    # macOS/Linux
+venv\Scripts\activate       # Windows
+```
 
 3. **Install dependencies**:
 
+```bash
 pip install -r requirements.txt
+```
 
 ### Environment Variables
 
@@ -74,17 +82,24 @@ IPINFO_API_TOKEN=your-ipinfo-token
 
 1. **Apply migrations**:
 
+```bash
 python3 manage.py migrate
+```
 
 2. **Create a superuser** (for Django admin, optional):
 
+```bash
 python3 manage.py createsuperuser
+```
 
 3. **Run the development server**:
 
+```bash
 python3 manage.py runserver
+```
 
-4. **Browse API docs**: http://localhost:8000/api-docs/swagger-ui/
+4. **Browse API docs**:  
+   [http://localhost:8000/api-docs/swagger-ui/](http://localhost:8000/api-docs/swagger-ui/)
 
 ## API Endpoints
 
@@ -101,24 +116,28 @@ _All weather endpoints require an `Authorization: Bearer <access_token>` header.
 
 1. **Login to get tokens**:
 
-curl -X POST http://localhost:8000/accounts/login/ \  
-  -H "Content-Type: application/json" \  
+```bash
+curl -X POST http://localhost:8000/accounts/login/ \
+  -H "Content-Type: application/json" \
   -d '{"username": "user", "password": "pass"}'
+```
 
-2. **Get current weather**:
+2. **Take the `access` token from the response**, then open your browser and go to:  
+   [http://localhost:8000/api-docs/swagger-ui/](http://localhost:8000/api-docs/swagger-ui/)
 
-curl -H "Authorization: Bearer <ACCESS_TOKEN>" \  
-  "http://localhost:8000/weather/?location=Amman"
+3. **Authorize Swagger UI**:
+   - Click on the **"Authorize"** button at the top right.
+   - Paste your token like this:  
+     ```
+     Bearer <your_access_token>
+     ```
+   - Click **"Authorize"** again and close the dialog.
 
-3. **Get forecast**:
-
-curl -H "Authorization: Bearer <ACCESS_TOKEN>" \  
-  "http://localhost:8000/weather/forecast/?location=Amman"
+4. **Test the Weather APIs**:
+   - Scroll down to the `/weather/` and `/weather/forecast/` sections.
+   - Click **"Try it out"**, enter a city name (e.g., `Amman`), and execute the request.
 
 ## Screenshots
 
-![Current Weather Example](.png)  
+![Current Weather Example](current.png)  
 ![Forecast Example](forecast.png)
-
-
-
