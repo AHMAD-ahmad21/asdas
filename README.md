@@ -11,7 +11,6 @@
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
-  - [Environment Variables](#environment-variables)
   - [Running the Application](#running-the-application)
 - [API Endpoints](#api-endpoints)
 - [Usage Examples](#usage-examples)
