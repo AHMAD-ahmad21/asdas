@@ -66,17 +66,6 @@ venv\Scripts\activate       # Windows
 pip install -r requirements.txt
 ```
 
-### Environment Variables
-
-Create a `.env` file in the project root with the following:
-
-```dotenv
-SECRET_KEY=your-django-secret-key
-DEBUG=True
-WEATHER_API_KEY=your-weatherapi-key
-IPINFO_API_TOKEN=your-ipinfo-token
-```
-
 ### Running the Application
 
 1. **Apply migrations**:
