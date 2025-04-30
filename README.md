@@ -34,8 +34,7 @@
 - **Schema & Docs:** drf-spectacular (OpenAPI + Swagger UI)
 - **Weather Data:** weatherapi.com (live), ipinfo.io for geo-lookup
 - **Database:** SQLite (default)
-- **Testing:** pytest, Django test framework
-- **Containerization:** Docker (optional)
+- **Testing:** Django test framework
 
 ## Getting Started
 
@@ -103,32 +102,31 @@ python3 manage.py runserver
 
 ## API Endpoints
 
-| Method | Endpoint                                | Description                                         |
-| ------ | --------------------------------------- | --------------------------------------------------- |
-| POST   | `/accounts/login/`                      | Obtain JWT access & refresh tokens                  |
-| POST   | `/accounts/refresh/`                    | Refresh JWT access token                            |
-| GET    | `/weather/?location=City`               | Current weather for `City` (auth required)          |
-| GET    | `/weather/forecast/?location=City`      | 6-day & hourly forecast for `City` (auth required)  |
+| Method | Endpoint                                | Description                                        |
+| ------ | --------------------------------------- |----------------------------------------------------|
+| POST   | `/accounts/login/`                      | Obtain JWT access & refresh tokens                 |
+| POST   | `/accounts/refresh/`                    | Refresh JWT access token                           |
+| GET    | `/weather/?location=City`               | Current weather for `City` (auth required)         |
+| GET    | `/weather/forecast/?location=City`      | 5-day & hourly forecast for `City` (auth required) |
 
 _All weather endpoints require an `Authorization: Bearer <access_token>` header._
 
 ## Usage Examples
 
-1. **Login to get tokens**:
+1. **Login to get tokens** ([http://localhost:8000/accounts/login/](http://localhost:8000/accounts/login/)):
 
-curl -X POST http://localhost:8000/accounts/login/ \  
-  -H "Content-Type: application/json" \  
+```bash
+curl -X POST http://localhost:8000/accounts/login/ \
+  -H "Content-Type: application/json" \
   -d '{"username": "user", "password": "pass"}'
+```
 
 2. **Take the `access` token from the response**, then open your browser and go to:  
    [http://localhost:8000/api-docs/swagger-ui/](http://localhost:8000/api-docs/swagger-ui/)
 
 3. **Authorize Swagger UI**:
    - Click on the **"Authorize"** button at the top right.
-   - Paste your token like this:  
-     ```
-     Bearer <your_access_token>
-     ```
+   - Paste your access token into the input box.
    - Click **"Authorize"** again and close the dialog.
 
 4. **Test the Weather APIs**:
@@ -137,5 +135,5 @@ curl -X POST http://localhost:8000/accounts/login/ \
 
 ## Screenshots
 
-![Current Weather Example](current.png)  
-![Forecast Example](forecast.png)
+![Current Weather Example](/home/ahmad/Pictures/Screenshots/current_weather_example.png)  
+![Forecast Example](/home/ahmad/Pictures/Screenshots/forecast_example.png)
