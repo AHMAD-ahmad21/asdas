@@ -40,7 +40,7 @@
 1. **Clone the repository**:
 
 ```bash
-git clone https://github.com/yourusername/sky_pulse.git
+git clone https://github.com/Ahmed-zoubii/sky-pulse.git
 cd sky_pulse
 ```
 
