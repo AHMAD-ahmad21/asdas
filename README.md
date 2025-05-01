@@ -1,6 +1,6 @@
 ## sky_pulse
 
-**A Django REST API for fetching current weather and forecast data with JWT authentication.**
+**A Django REST API for fetching real-time weather information and multi-day forecasts based on a provided city or country.**
 
 ---
 
@@ -21,13 +21,13 @@
 
 - User authentication with JSON Web Tokens (JWT)
 - Retrieve current weather by location
-- Retrieve 6-day forecast and hourly forecast
+- Retrieve 5-day forecast and hourly forecast
 - Automatic fallback to client IP-based location lookup
 - Interactive API documentation via Swagger/OpenAPI
 
 ## Tech Stack
 
-- **Framework:** Django 4.2, Django REST Framework
+- **Framework:** Django 5.1, Django REST Framework
 - **Authentication:** djangorestframework-simplejwt
 - **Schema & Docs:** drf-spectacular (OpenAPI + Swagger UI)
 - **Weather Data:** weatherapi.com (live), ipinfo.io for geo-lookup
