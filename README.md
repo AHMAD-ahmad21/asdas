@@ -78,7 +78,7 @@ To configure the application, you will need to create a `.env` file in the root 
 
 2.  **Add Environment Variables:**
 
-    Open the `.env` file and add the following content, replacing the placeholder values with the actual keys and:
+    Open the `.env` file and add the following content, replacing the placeholder values with the actual keys:
 
     ```dotenv
     DEBUG=True
